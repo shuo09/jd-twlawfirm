@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>競鼎國際法律事務所 | JD International Law Firm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #B8965A;
+    --gold-light: #D4AF73;
+    --gold-dark: #8B6E3A;
+    --ink: #1A1612;
+    --ink-soft: #2E2820;
+    --parchment: #F7F3ED;
+    --parchment-dark: #EDE7DC;
+    --stone: #6B6560;
+    --stone-light: #9A948F;
+    --white: #FEFCF9;
+    --accent-red: #8B2020;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background: var(--ink);
+    color: var(--parchment);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(26,22,18,0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(184,150,90,0.25);
+    padding: 0 4vw;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 70px;
+  }
+  .nav-logo {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 0.12em;
+    line-height: 1.3;
+  }
+  .nav-logo span { font-size: 0.72rem; font-weight: 300; color: var(--stone-light); display: block; letter-spacing: 0.2em; text-transform: uppercase; }
+  nav ul { list-style: none; display: flex; gap: 2.5rem; }
+  nav ul li a {
+    font-size: 0.82rem; letter-spacing: 0.15em; color: var(--stone-light);
+    text-decoration: none; text-transform: uppercase;
+    transition: color 0.3s;
+    font-weight: 400;
+  }
+  nav ul li a:hover, nav ul li a.active { color: var(--gold); }
+
+  /* ─── PAGES ─── */
+  .page { display: none; min-height: 100vh; padding-top: 70px; }
+  .page.active { display: block; }
+
+  /* ─── HERO ─── */
+  #hero {
+    position: relative; height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+    background: var(--ink);
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 40%, rgba(184,150,90,0.07) 0%, transparent 70%),
+      linear-gradient(180deg, #1A1612 0%, #12100E 100%);
+  }
+  .hero-lines {
+    position: absolute; inset: 0; overflow: hidden; opacity: 0.15;
+  }
+  .hero-lines::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 900px; height: 900px;
+    transform: translate(-50%, -50%);
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    animation: pulse-ring 8s ease-in-out infinite;
+  }
+  .hero-lines::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 600px; height: 600px;
+    transform: translate(-50%, -50%);
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    animation: pulse-ring 8s ease-in-out 2s infinite;
+  }
+  @keyframes pulse-ring {
+    0%, 100% { opacity: 0.3; transform: translate(-50%,-50%) scale(1); }
+    50% { opacity: 0.1; transform: translate(-50%,-50%) scale(1.05); }
+  }
+  .hero-content {
+    position: relative; text-align: center;
+    animation: fadeUp 1.2s ease both;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-seal {
+    width: 100px; height: 100px; margin: 0 auto 2rem;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .jd-logo-svg {
+    width: 100px; height: 100px;
+    filter: drop-shadow(0 0 18px rgba(184,150,90,0.25));
+    animation: logoGlow 4s ease-in-out infinite;
+  }
+  @keyframes logoGlow {
+    0%, 100% { filter: drop-shadow(0 0 14px rgba(184,150,90,0.2)); }
+    50% { filter: drop-shadow(0 0 28px rgba(184,150,90,0.45)); }
+  }
+  .hero-zh {
+    font-family: 'Noto Serif TC', serif;
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: 0.25em;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+  .hero-en {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    font-weight: 300;
+    color: var(--gold);
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+  .hero-divider {
+    width: 120px; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 0 auto 2rem;
+  }
+  .hero-tagline {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 0.9rem;
+    color: var(--stone-light);
+    letter-spacing: 0.2em;
+    margin-bottom: 3rem;
+  }
+  .hero-cta {
+    display: inline-flex; gap: 1.2rem; flex-wrap: wrap; justify-content: center;
+  }
+  .btn-primary {
+    padding: 0.9rem 2.5rem;
+    background: var(--gold);
+    color: var(--ink);
+    font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase;
+    border: none; cursor: pointer;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 500;
+    transition: all 0.3s;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .btn-outline {
+    padding: 0.9rem 2.5rem;
+    background: transparent;
+    color: var(--gold);
+    font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase;
+    border: 1px solid var(--gold); cursor: pointer;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 400;
+    transition: all 0.3s;
+  }
+  .btn-outline:hover { background: rgba(184,150,90,0.1); transform: translateY(-2px); }
+
+  /* ─── SECTIONS ─── */
+  .section { padding: 6rem 4vw; }
+  .section-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.75rem; letter-spacing: 0.4em;
+    color: var(--gold); text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+  .section-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+  }
+  .section-title em {
+    font-style: italic;
+    color: var(--gold);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2em;
+  }
+  .title-bar {
+    width: 60px; height: 2px;
+    background: var(--gold);
+    margin-bottom: 2.5rem;
+  }
+  .section-body {
+    font-size: 0.92rem; line-height: 2; color: var(--stone-light);
+    max-width: 700px;
+  }
+
+  /* ─── ABOUT ─── */
+  #about { background: var(--ink); }
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 6rem;
+    align-items: center; max-width: 1200px; margin: 0 auto;
+  }
+  .about-stats {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem;
+  }
+  .stat-box {
+    border-left: 2px solid var(--gold);
+    padding-left: 1.2rem;
+  }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem; color: var(--gold); font-weight: 300;
+  }
+  .stat-label {
+    font-size: 0.78rem; color: var(--stone-light); letter-spacing: 0.1em; margin-top: 0.2rem;
+  }
+  .about-visual {
+    position: relative;
+  }
+  .about-frame {
+    border: 1px solid rgba(184,150,90,0.3);
+    padding: 3rem;
+    background: rgba(184,150,90,0.03);
+  }
+  .about-practice-list {
+    list-style: none;
+  }
+  .about-practice-list li {
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(184,150,90,0.12);
+    display: flex; align-items: center; gap: 1rem;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 0.95rem; color: var(--parchment);
+    letter-spacing: 0.05em;
+  }
+  .about-practice-list li::before {
+    content: '◈';
+    color: var(--gold); font-size: 0.7rem;
+  }
+
+  /* ─── ATTORNEYS ─── */
+  #attorneys {
+    background: linear-gradient(180deg, var(--ink-soft) 0%, var(--ink) 100%);
+  }
+  .attorneys-header { max-width: 1200px; margin: 0 auto 4rem; }
+  .attorney-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2px; max-width: 1200px; margin: 0 auto;
+  }
+  .attorney-card {
+    background: rgba(184,150,90,0.04);
+    border: 1px solid rgba(184,150,90,0.15);
+    padding: 2.5rem 2rem;
+    position: relative; overflow: hidden;
+    transition: all 0.4s;
+    cursor: pointer;
+  }
+  .attorney-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0; transition: opacity 0.4s;
+  }
+  .attorney-card:hover { background: rgba(184,150,90,0.08); transform: translateY(-4px); }
+  .attorney-card:hover::before { opacity: 1; }
+  .attorney-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem; font-weight: 300;
+    color: rgba(184,150,90,0.15);
+    position: absolute; top: 1rem; right: 1.5rem;
+    line-height: 1;
+  }
+  .attorney-avatar {
+    width: 70px; height: 70px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    background: rgba(184,150,90,0.1);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem; color: var(--gold);
+    margin-bottom: 1.5rem;
+  }
+  .attorney-name-zh {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1.3rem; font-weight: 600;
+    color: var(--white); letter-spacing: 0.1em;
+    margin-bottom: 0.2rem;
+  }
+  .attorney-name-en {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.9rem; font-weight: 300;
+    color: var(--gold); letter-spacing: 0.2em;
+    text-transform: uppercase; margin-bottom: 0.8rem;
+  }
+  .attorney-title {
+    font-size: 0.78rem; color: var(--stone-light);
+    background: rgba(184,150,90,0.1);
+    border: 1px solid rgba(184,150,90,0.2);
+    display: inline-block;
+    padding: 0.2rem 0.7rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 1.2rem;
+  }
+  .attorney-specialties {
+    list-style: none;
+  }
+  .attorney-specialties li {
+    font-size: 0.82rem; color: var(--stone-light);
+    padding: 0.3rem 0;
+    padding-left: 1rem;
+    position: relative;
+    border-bottom: 1px dashed rgba(184,150,90,0.1);
+    line-height: 1.6;
+  }
+  .attorney-specialties li::before {
+    content: '—'; position: absolute; left: 0; color: var(--gold);
+  }
+  .attorney-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 0.15rem 0.5rem;
+    letter-spacing: 0.1em;
+    margin-top: 1rem;
+    margin-right: 0.3rem;
+  }
+
+  /* ─── CONTACT ─── */
+  #contact { background: var(--ink); }
+  .contact-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
+    max-width: 1200px; margin: 0 auto; align-items: start;
+  }
+  .contact-info-block {
+    margin-bottom: 2rem;
+  }
+  .contact-info-label {
+    font-size: 0.72rem; letter-spacing: 0.3em; color: var(--gold);
+    text-transform: uppercase; margin-bottom: 0.5rem;
+    font-family: 'Cormorant Garamond', serif;
+  }
+  .contact-info-value {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1rem; color: var(--parchment);
+    line-height: 1.7; letter-spacing: 0.05em;
+  }
+  .contact-info-value a {
+    color: var(--parchment); text-decoration: none;
+    transition: color 0.3s;
+  }
+  .contact-info-value a:hover { color: var(--gold); }
+  .line-btn {
+    display: inline-flex; align-items: center; gap: 0.7rem;
+    padding: 1rem 2rem;
+    background: #06C755;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    transition: all 0.3s;
+    margin-top: 0.5rem;
+    border-radius: 2px;
+  }
+  .line-btn:hover { background: #05b34c; transform: translateY(-2px); }
+  .line-icon {
+    width: 22px; height: 22px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.8rem; font-weight: 700;
+  }
+  .contact-form { }
+  .form-row { margin-bottom: 1.5rem; }
+  .form-row label {
+    display: block; font-size: 0.75rem; letter-spacing: 0.2em;
+    color: var(--stone-light); text-transform: uppercase; margin-bottom: 0.5rem;
+  }
+  .form-row input, .form-row textarea, .form-row select {
+    width: 100%;
+    background: rgba(184,150,90,0.05);
+    border: 1px solid rgba(184,150,90,0.2);
+    color: var(--parchment);
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+    font-family: 'Noto Sans TC', sans-serif;
+    outline: none;
+    transition: border-color 0.3s;
+    -webkit-appearance: none;
+  }
+  .form-row input:focus, .form-row textarea:focus, .form-row select:focus {
+    border-color: var(--gold);
+  }
+  .form-row textarea { resize: vertical; min-height: 120px; }
+  .form-row select option { background: var(--ink-soft); }
+
+  /* ─── ARTICLES PAGE ─── */
+  #articles-page { background: var(--ink); }
+  .articles-hero {
+    background: linear-gradient(180deg, rgba(184,150,90,0.06) 0%, transparent 100%);
+    padding: 4rem 4vw 3rem;
+    border-bottom: 1px solid rgba(184,150,90,0.15);
+  }
+  .articles-hero-inner { max-width: 1200px; margin: 0 auto; }
+  .articles-filter {
+    display: flex; gap: 0.8rem; flex-wrap: wrap;
+    max-width: 1200px; margin: 2rem auto;
+    padding: 0 4vw;
+  }
+  .filter-btn {
+    padding: 0.5rem 1.2rem;
+    background: transparent;
+    border: 1px solid rgba(184,150,90,0.3);
+    color: var(--stone-light);
+    font-size: 0.78rem; letter-spacing: 0.15em;
+    cursor: pointer; transition: all 0.3s;
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+  .filter-btn:hover, .filter-btn.active {
+    background: rgba(184,150,90,0.12);
+    border-color: var(--gold); color: var(--gold);
+  }
+  .articles-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 1px; max-width: 1200px; margin: 0 auto;
+    padding: 0 4vw 6rem;
+  }
+  .article-card {
+    background: rgba(184,150,90,0.03);
+    border: 1px solid rgba(184,150,90,0.1);
+    padding: 2rem;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  .article-card:hover {
+    background: rgba(184,150,90,0.07);
+    border-color: rgba(184,150,90,0.3);
+    transform: translateY(-3px);
+  }
+  .article-meta {
+    display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .article-tag {
+    font-size: 0.68rem; letter-spacing: 0.15em;
+    padding: 0.2rem 0.6rem;
+    background: rgba(184,150,90,0.1);
+    color: var(--gold); border: 1px solid rgba(184,150,90,0.2);
+    text-transform: uppercase;
+  }
+  .article-tag.civil { background: rgba(34,80,140,0.15); color: #6CA0DC; border-color: rgba(108,160,220,0.3); }
+  .article-tag.criminal { background: rgba(140,32,32,0.15); color: #E07070; border-color: rgba(224,112,112,0.3); }
+  .article-tag.ip { background: rgba(60,120,80,0.15); color: #7DC09A; border-color: rgba(125,192,154,0.3); }
+  .article-tag.corporate { background: rgba(120,80,160,0.15); color: #B09AD0; border-color: rgba(176,154,208,0.3); }
+  .article-date {
+    font-size: 0.72rem; color: var(--stone-light); letter-spacing: 0.1em;
+    font-family: 'Cormorant Garamond', serif;
+    margin-left: auto;
+  }
+  .article-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1.05rem; font-weight: 600;
+    color: var(--white); line-height: 1.6;
+    margin-bottom: 0.8rem; letter-spacing: 0.05em;
+  }
+  .article-excerpt {
+    font-size: 0.83rem; color: var(--stone-light); line-height: 1.8;
+  }
+  .article-author {
+    display: flex; align-items: center; gap: 0.5rem;
+    margin-top: 1.2rem; padding-top: 1.2rem;
+    border-top: 1px solid rgba(184,150,90,0.1);
+    font-size: 0.75rem; color: var(--stone-light); letter-spacing: 0.08em;
+  }
+  .author-dot {
+    width: 6px; height: 6px; border-radius: 50%; background: var(--gold);
+  }
+  /* Article Modal */
+  .article-modal-overlay {
+    display: none; position: fixed; inset: 0; z-index: 200;
+    background: rgba(0,0,0,0.85); backdrop-filter: blur(6px);
+    align-items: center; justify-content: center; padding: 2rem;
+  }
+  .article-modal-overlay.open { display: flex; }
+  .article-modal {
+    background: var(--ink-soft);
+    border: 1px solid rgba(184,150,90,0.25);
+    max-width: 720px; width: 100%;
+    max-height: 80vh; overflow-y: auto;
+    padding: 3rem;
+    position: relative;
+    animation: modalIn 0.3s ease both;
+  }
+  @keyframes modalIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  .modal-close {
+    position: absolute; top: 1.5rem; right: 1.5rem;
+    background: none; border: none; color: var(--stone-light);
+    font-size: 1.5rem; cursor: pointer; line-height: 1;
+    transition: color 0.3s;
+  }
+  .modal-close:hover { color: var(--gold); }
+  .modal-tag { margin-bottom: 1.5rem; }
+  .modal-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1.4rem; font-weight: 600;
+    color: var(--white); line-height: 1.6;
+    margin-bottom: 1rem; letter-spacing: 0.05em;
+  }
+  .modal-meta {
+    font-size: 0.78rem; color: var(--stone-light);
+    margin-bottom: 2rem; padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(184,150,90,0.15);
+    letter-spacing: 0.08em;
+  }
+  .modal-body {
+    font-size: 0.9rem; line-height: 2.1; color: var(--stone-light);
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+  .modal-body p { margin-bottom: 1.2em; }
+  .modal-body h3 {
+    font-family: 'Noto Serif TC', serif;
+    color: var(--gold); font-size: 1rem;
+    margin: 1.5em 0 0.8em;
+    letter-spacing: 0.1em;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: #0E0C09;
+    border-top: 1px solid rgba(184,150,90,0.15);
+    padding: 3rem 4vw;
+  }
+  .footer-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1.5rem;
+  }
+  .footer-logo {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1rem; font-weight: 600;
+    color: var(--gold); letter-spacing: 0.15em;
+  }
+  .footer-copy {
+    font-size: 0.75rem; color: var(--stone);
+    letter-spacing: 0.08em; text-align: center;
+  }
+  .footer-links {
+    display: flex; gap: 1.5rem;
+  }
+  .footer-links a {
+    font-size: 0.75rem; color: var(--stone);
+    text-decoration: none; letter-spacing: 0.1em;
+    transition: color 0.3s;
+  }
+  .footer-links a:hover { color: var(--gold); }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+    nav ul { gap: 1.2rem; }
+    nav ul li a { font-size: 0.74rem; }
+  }
+  @media (max-width: 600px) {
+    nav ul { display: none; }
+    .hero-zh { letter-spacing: 0.15em; }
+    .attorney-grid { grid-template-columns: 1fr; }
+    .articles-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ─── SCROLL REVEAL ─── */
+  .reveal {
+    opacity: 0; transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ─── MAP PLACEHOLDER ─── */
+  .map-embed {
+    border: 1px solid rgba(184,150,90,0.2);
+    margin-top: 2rem;
+    overflow: hidden;
+  }
+  .map-embed iframe {
+    width: 100%; height: 260px; border: none; display: block;
+    filter: grayscale(0.3) sepia(0.2);
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo" style="display:flex;align-items:center;gap:0.7rem;">
+    <svg width="28" height="28" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
+      <polygon points="50,5 4,92 20,92 50,28 80,92 96,92" fill="#C0392B"/>
+      <polygon points="50,36 32,78 68,78" fill="#1A1612"/>
+      <rect x="26" y="60" width="14" height="10" fill="#C0392B"/>
+      <rect x="60" y="60" width="14" height="10" fill="#C0392B"/>
+    </svg>
+    <div>競鼎國際法律事務所
+    <span>JD International Law Firm</span></div>
+  </div>
+  <ul>
+    <li><a href="#" onclick="showPage('home')" class="active" id="nav-home">關於我們</a></li>
+    <li><a href="#" onclick="showPage('home'); setTimeout(()=>scrollTo('attorneys'),300)" id="nav-attorneys">律師團隊</a></li>
+    <li><a href="#" onclick="showPage('articles')" id="nav-articles">法律文章</a></li>
+    <li><a href="#" onclick="showPage('home'); setTimeout(()=>scrollTo('contact'),300)" id="nav-contact">聯絡我們</a></li>
+  </ul>
+</nav>
+
+<!-- ====== HOME PAGE ====== -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-lines"></div>
+    <div class="hero-content">
+      <div class="hero-seal">
+        <svg class="jd-logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="50,5 4,92 20,92 50,28 80,92 96,92" fill="#C0392B"/>
+          <polygon points="50,36 32,78 68,78" fill="var(--ink)"/>
+          <rect x="26" y="60" width="14" height="10" fill="#C0392B"/>
+          <rect x="60" y="60" width="14" height="10" fill="#C0392B"/>
+        </svg>
+      </div>
+      <h1 class="hero-zh">競鼎國際法律事務所</h1>
+      <p class="hero-en">JD International Law Firm</p>
+      <div class="hero-divider"></div>
+      <p class="hero-tagline">刑事 · 民事 · 智慧財產 · 企業法務 · 科技法律</p>
+      <div class="hero-cta">
+        <button class="btn-primary" onclick="showPage('home'); setTimeout(()=>scrollTo('attorneys'),300)">律師團隊</button>
+        <button class="btn-outline" onclick="showPage('articles')">法律文章</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="about-grid">
+      <div class="reveal">
+        <p class="section-label">About the Firm</p>
+        <h2 class="section-title">專業 · 信賴 · <em>卓越</em></h2>
+        <div class="title-bar"></div>
+        <p class="section-body">
+          競鼎國際法律事務所由具備豐富執業經驗的律師與會計師所組成，致力提供刑事辯護、民事訴訟、智慧財產保護、企業法務及科技法律等全方位法律服務。
+        </p>
+        <p class="section-body" style="margin-top:1rem;">
+          我們的團隊橫跨法律、財稅、科技等專業領域，能以最完整的視角為當事人規劃最佳策略，在複雜的法律環境中守護您的權益。
+        </p>
+        <div class="about-stats">
+          <div class="stat-box reveal">
+            <div class="stat-num">4</div>
+            <div class="stat-label">專業律師</div>
+          </div>
+          <div class="stat-box reveal">
+            <div class="stat-num">3</div>
+            <div class="stat-label">律師/會計師雙執照</div>
+          </div>
+          <div class="stat-box reveal">
+            <div class="stat-num">∞</div>
+            <div class="stat-label">全方位法律服務</div>
+          </div>
+          <div class="stat-box reveal">
+            <div class="stat-num">01</div>
+            <div class="stat-label">台北大安區服務據點</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-visual reveal">
+        <div class="about-frame">
+          <p class="section-label" style="margin-bottom:1.5rem;">業務領域</p>
+          <ul class="about-practice-list">
+            <li>刑事辯護與偵查階段諮詢</li>
+            <li>民事訴訟與非訟事件</li>
+            <li>智慧財產權保護與爭議</li>
+            <li>企業合併、收購與設立</li>
+            <li>科技、數位資產法律服務</li>
+            <li>稅務規劃與行政救濟</li>
+            <li>司法官考試及格案件</li>
+            <li>國際商務法律諮詢</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ATTORNEYS -->
+  <section id="attorneys" class="section">
+    <div class="attorneys-header reveal">
+      <p class="section-label">Our Attorneys</p>
+      <h2 class="section-title">律師 <em>團隊</em></h2>
+      <div class="title-bar"></div>
+    </div>
+    <div class="attorney-grid">
+
+      <!-- 周弘洛 -->
+      <div class="attorney-card reveal">
+        <div class="attorney-num">01</div>
+        <div class="attorney-avatar">周</div>
+        <div class="attorney-name-zh">周弘洛 律師</div>
+        <div class="attorney-name-en">Thomas Chou</div>
+        <div class="attorney-title">所長</div>
+        <ul class="attorney-specialties">
+          <li>刑事辯護與偵查</li>
+          <li>民事訴訟與仲裁</li>
+          <li>智慧財產權保護</li>
+          <li>著作權、商標爭議</li>
+        </ul>
+        <span class="attorney-badge">刑事</span>
+        <span class="attorney-badge">民事</span>
+        <span class="attorney-badge">智財</span>
+      </div>
+
+      <!-- 郭一燊 -->
+      <div class="attorney-card reveal">
+        <div class="attorney-num">02</div>
+        <div class="attorney-avatar">郭</div>
+        <div class="attorney-name-zh">郭一燊 律師</div>
+        <div class="attorney-name-en">Ethan Kuo</div>
+        <div class="attorney-title">律師 / 會計師</div>
+        <ul class="attorney-specialties">
+          <li>稅務規劃與爭訟</li>
+          <li>企業財務法律顧問</li>
+          <li>行政救濟</li>
+          <li>前國稅局官員資歷</li>
+        </ul>
+        <span class="attorney-badge">稅務</span>
+        <span class="attorney-badge">企業</span>
+        <span class="attorney-badge">會計</span>
+      </div>
+
+      <!-- 黃仁傑 -->
+      <div class="attorney-card reveal">
+        <div class="attorney-num">03</div>
+        <div class="attorney-avatar">黃</div>
+        <div class="attorney-name-zh">黃仁傑 律師</div>
+        <div class="attorney-name-en">Mark Huang</div>
+        <div class="attorney-title">科技律師 / 電子技師</div>
+        <ul class="attorney-specialties">
+          <li>科技與電子商務法律</li>
+          <li>數位資產與區塊鏈</li>
+          <li>AI 與資料保護</li>
+          <li>專利技術侵權訴訟</li>
+        </ul>
+        <span class="attorney-badge">科技</span>
+        <span class="attorney-badge">專利</span>
+        <span class="attorney-badge">數位</span>
+      </div>
+
+      <!-- 李庚翰 -->
+      <div class="attorney-card reveal">
+        <div class="attorney-num">04</div>
+        <div class="attorney-avatar">李</div>
+        <div class="attorney-name-zh">李庚翰 律師</div>
+        <div class="attorney-name-en">Warren Li</div>
+        <div class="attorney-title">律師 / 會計師</div>
+        <ul class="attorney-specialties">
+          <li>司法官考試及格</li>
+          <li>企業設立與投資</li>
+          <li>財務法律規劃</li>
+          <li>訴訟與非訟事件</li>
+        </ul>
+        <span class="attorney-badge">司法官</span>
+        <span class="attorney-badge">企業</span>
+        <span class="attorney-badge">會計</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="contact-grid">
+      <div class="reveal">
+        <p class="section-label">Contact Us</p>
+        <h2 class="section-title">聯絡 <em>我們</em></h2>
+        <div class="title-bar"></div>
+
+        <div class="contact-info-block">
+          <div class="contact-info-label">地址</div>
+          <div class="contact-info-value">台北市大安區仁愛路四段312號2樓之7</div>
+        </div>
+        <div class="contact-info-block">
+          <div class="contact-info-label">電話</div>
+          <div class="contact-info-value">
+            <a href="tel:0277551995">02-7755-1995</a>
+          </div>
+        </div>
+        <div class="contact-info-block">
+          <div class="contact-info-label">電子信箱</div>
+          <div class="contact-info-value">
+            <a href="mailto:markhuang@jd-twlawfirm.com">markhuang@jd-twlawfirm.com</a>
+          </div>
+        </div>
+        <div class="contact-info-block">
+          <div class="contact-info-label">LINE 官方帳號</div>
+          <a href="https://line.me/R/ti/p/@478wysum" target="_blank" class="line-btn">
+            <span class="line-icon">L</span>
+            加入 LINE 官方帳號 @478wysum
+          </a>
+        </div>
+        <div class="map-embed">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.3086!2d121.5463!3d25.0330!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442aa21fbe7a1e5%3A0x0!2z5oCn5oSb5biC5aSn5a6J5Y-j5LuN5oOu5ZyS5Zub5q2j6Lev!5e0!3m2!1szh-TW!2stw!4v1700000000000"
+            allowfullscreen loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <p class="section-label" style="margin-bottom:1rem;">Send a Message</p>
+        <p style="font-size:0.85rem;color:var(--stone-light);margin-bottom:2rem;line-height:1.8;">
+          如有任何法律問題或諮詢需求，歡迎填寫下方表單，我們將盡快與您聯繫。
+        </p>
+        <div class="contact-form">
+          <div class="form-row">
+            <label>姓名 Name</label>
+            <input type="text" placeholder="您的姓名">
+          </div>
+          <div class="form-row">
+            <label>聯絡電話 Phone</label>
+            <input type="tel" placeholder="0912-345-678">
+          </div>
+          <div class="form-row">
+            <label>電子信箱 Email</label>
+            <input type="email" placeholder="your@email.com">
+          </div>
+          <div class="form-row">
+            <label>諮詢類別 Category</label>
+            <select>
+              <option value="">請選擇類別</option>
+              <option>刑事案件</option>
+              <option>民事訴訟</option>
+              <option>智慧財產</option>
+              <option>企業法務</option>
+              <option>稅務諮詢</option>
+              <option>科技法律</option>
+              <option>其他</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label>案件說明 Message</label>
+            <textarea placeholder="請簡述您的法律問題或諮詢需求（內容將嚴格保密）"></textarea>
+          </div>
+          <button class="btn-primary" style="width:100%;" onclick="submitForm()">送出諮詢</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ====== ARTICLES PAGE ====== -->
+<div id="page-articles" class="page">
+  <div class="articles-hero">
+    <div class="articles-hero-inner">
+      <p class="section-label">Legal Insights</p>
+      <h2 class="section-title" style="margin-bottom:0.5rem;">法律 <em>文章</em></h2>
+      <p style="font-size:0.88rem;color:var(--stone-light);letter-spacing:0.08em;">由競鼎律師團隊撰寫，提供最新法律知識與實務見解</p>
+    </div>
+  </div>
+  <div class="articles-filter">
+    <button class="filter-btn active" onclick="filterArticles('all', this)">全部</button>
+    <button class="filter-btn" onclick="filterArticles('criminal', this)">刑事</button>
+    <button class="filter-btn" onclick="filterArticles('civil', this)">民事</button>
+    <button class="filter-btn" onclick="filterArticles('ip', this)">智慧財產</button>
+    <button class="filter-btn" onclick="filterArticles('corporate', this)">企業稅務</button>
+  </div>
+  <div class="articles-grid" id="articlesGrid"></div>
+</div>
+
+<!-- Article Modal -->
+<div class="article-modal-overlay" id="articleModal" onclick="closeModal(event)">
+  <div class="article-modal">
+    <button class="modal-close" onclick="document.getElementById('articleModal').classList.remove('open')">✕</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo" style="display:flex;align-items:center;gap:0.6rem;">
+      <svg width="22" height="22" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="50,5 4,92 20,92 50,28 80,92 96,92" fill="#C0392B"/>
+        <polygon points="50,36 32,78 68,78" fill="#0E0C09"/>
+        <rect x="26" y="60" width="14" height="10" fill="#C0392B"/>
+        <rect x="60" y="60" width="14" height="10" fill="#C0392B"/>
+      </svg>
+      競鼎國際法律事務所
+    </div>
+    <div class="footer-copy">© 2024 JD International Law Firm. All rights reserved.<br>台北市大安區仁愛路四段312號2樓之7</div>
+    <div class="footer-links">
+      <a href="mailto:markhuang@jd-twlawfirm.com">信箱</a>
+      <a href="tel:0277551995">電話</a>
+      <a href="https://line.me/R/ti/p/@478wysum" target="_blank">LINE</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ─── PAGE ROUTING ───
+function showPage(name) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + name).classList.add('active');
+  document.querySelectorAll('nav ul li a').forEach(a => a.classList.remove('active'));
+  if (name === 'home') document.getElementById('nav-home').classList.add('active');
+  if (name === 'articles') document.getElementById('nav-articles').classList.add('active');
+  window.scrollTo(0, 0);
+  if (name === 'articles') renderArticles('all');
+}
+
+function scrollTo(id) {
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+}
+
+// ─── SCROLL REVEAL ───
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ─── ARTICLES DATA ───
+const articles = [
+  {
+    id: 1, category: 'criminal',
+    tag: '刑事', tagClass: 'criminal',
+    date: '2024.11.15',
+    title: '酒後駕車的法律風險：刑事責任與行政罰則全解析',
+    excerpt: '酒後駕車不僅危及自身與他人安全，更可能面臨嚴重的刑事及行政處罰。本文詳細說明相關法律規定與實務處理方式。',
+    author: '周弘洛 律師',
+    body: `
+      <p>酒後駕車（酒駕）案件在台灣司法實務中相當普遍，刑事責任主要規範於刑法第185條之3。根據現行法律，吐氣所含酒精濃度達每公升0.25毫克以上者，即構成不能安全駕駛罪，可處三年以下有期徒刑，得併科三十萬元以下罰金。</p>
+      <h3>一、刑事責任</h3>
+      <p>若因而致人傷亡，刑責將大幅加重。致人於傷者，可處十年以下有期徒刑，致人於死者，則可處三年以上十年以下有期徒刑。再犯者（五年內再次觸犯），刑度更將加重二分之一。</p>
+      <h3>二、行政處罰</h3>
+      <p>除刑事責任外，道路交通管理處罰條例亦設有行政罰則。吐氣酒精濃度每公升0.15毫克以上未達0.25毫克者，罰鍰15,000元至90,000元，並吊扣駕照一至二年；達0.25毫克以上者，吊銷駕照，且三年內不得重新考領。</p>
+      <h3>三、辯護策略</h3>
+      <p>面對酒駕指控，律師的辯護重點通常包括：檢視呼氣測試儀器之校正記錄、測試程序是否符合法定要求、當事人是否確實處於不能安全駕駛之狀態等。建議當事人於第一時間即尋求律師協助，切勿輕易認罪。</p>
+    `
+  },
+  {
+    id: 2, category: 'civil',
+    tag: '民事', tagClass: 'civil',
+    date: '2024.11.08',
+    title: '不當解僱的法律救濟：勞工如何主張權益',
+    excerpt: '遭受不當解僱的勞工，依法享有多種救濟途徑。本文介紹從申請調解到提起訴訟的完整程序與注意事項。',
+    author: '周弘洛 律師',
+    body: `
+      <p>勞動契約的終止須符合勞動基準法的規定，雇主不得任意解僱勞工。若遭受違法解僱，勞工可依法主張相關權利，包括請求復職或給付資遣費等。</p>
+      <h3>一、合法解僱要件</h3>
+      <p>依勞基法第11條，雇主僅得在特定事由下終止勞動契約，如：歇業或轉讓、虧損或業務緊縮、不可抗力等。若不符合法定事由，解僱即屬無效，勞工得請求回復原職。</p>
+      <h3>二、救濟管道</h3>
+      <p>勞工可向主管機關申請勞資爭議調解，若調解不成，可提起訴訟。勞動事件法簡化了勞工訴訟程序，並設有勞動法庭專責處理，大幅提升勞工訴訟效能。</p>
+      <h3>三、時效注意</h3>
+      <p>特別注意，確認僱傭關係存在之訴，雖無短期時效限制，但建議儘早提起，以免日後舉證困難或資方主張時效抗辯。建議於遭解僱後立即諮詢律師。</p>
+    `
+  },
+  {
+    id: 3, category: 'ip',
+    tag: '智慧財產', tagClass: 'ip',
+    date: '2024.10.30',
+    title: '商標侵權的認定標準與民刑事責任',
+    excerpt: '商標是企業最重要的資產之一。一旦遭受侵害，應如何迅速採取法律行動？本文說明侵權要件與救濟方式。',
+    author: '周弘洛 律師',
+    body: `
+      <p>商標侵權係指未經商標權人同意，在同一或類似商品或服務上使用相同或近似商標，足以致相關消費者混淆誤認之行為。</p>
+      <h3>一、民事救濟</h3>
+      <p>商標權人得依商標法請求損害賠償，並可依侵害情節請求1至3倍之懲罰性賠償。此外，得請求銷毀侵權商品及相關器具，並得請求法院核發假處分以立即停止侵害。</p>
+      <h3>二、刑事責任</h3>
+      <p>商標法第95條規定，意圖欺騙他人而使用相同或近似於他人商標之標識，可處三年以下有期徒刑、拘役或科或併科新台幣二十萬元以下罰金。</p>
+      <h3>三、建議事項</h3>
+      <p>發現疑似侵權時，應先蒐集並保全侵權證據，包括截圖、購買侵權品等，再諮詢智慧財產專業律師，評估採取民事或刑事途徑。</p>
+    `
+  },
+  {
+    id: 4, category: 'corporate',
+    tag: '企業稅務', tagClass: 'corporate',
+    date: '2025.03.18',
+    title: '企業稅務規劃：常見錯誤與合法節稅策略',
+    excerpt: '許多中小企業主對稅法規定不夠了解，容易在申報時犯下錯誤，甚至觸法。本文提供實用的稅務規劃觀念。',
+    author: '郭一燊 律師/會計師',
+    body: `
+      <p>稅務規劃是企業財務管理的重要環節。合法的稅務規劃不僅能降低稅負，更能有效管理現金流。然而，稅務規劃與逃漏稅之間有明確界線，企業主務必謹慎。</p>
+      <h3>一、常見錯誤</h3>
+      <p>實務上常見的稅務錯誤包括：個人消費混入公司費用、虛開或浮報費用發票、股東往來帳務不清等。一旦遭國稅局查核，除補稅外，還可能面臨罰款及刑事責任。</p>
+      <h3>二、合法節稅方式</h3>
+      <p>善用投資抵減、研發費用加計扣除、員工分紅費用化等合法工具，可在法律允許範圍內降低稅負。此外，正確的公司組織架構規劃（如分公司vs子公司），對稅務影響亦相當深遠。</p>
+      <h3>三、稅務爭訟</h3>
+      <p>若收到國稅局補稅通知，應在法定期間內提出復查申請，必要時可循序提起訴願及行政訴訟。具有國稅局官員實務背景的稅務律師，往往能更精準掌握稅局審查重點。</p>
+    `
+  },
+  {
+    id: 5, category: 'criminal',
+    tag: '刑事', tagClass: 'criminal',
+    date: '2024.10.10',
+    title: '詐欺罪的構成要件與常見辯護策略',
+    excerpt: '詐欺案件在數位時代日益增多，從投資詐騙到網路詐欺，如何判斷是否構成犯罪？本文深入剖析。',
+    author: '周弘洛 律師',
+    body: `
+      <p>詐欺罪規定於刑法第339條，構成要件為：意圖不法所有、施用詐術使人陷於錯誤、被害人因此為財產上之處分、行為人取得財物。四要件缺一不可。</p>
+      <h3>一、常見類型</h3>
+      <p>現代詐欺類型多元，包括投資詐騙（假幣商、假老師）、網路購物詐欺、愛情詐騙、虛偽借貸等。近年詐欺集團組織化，法院對組織犯罪之認定愈趨嚴格，刑責也更重。</p>
+      <h3>二、民刑事交錯</h3>
+      <p>詐欺案件常涉及民刑事雙軌並行。被害人可同時提起告訴及民事損害賠償訴訟，或透過附帶民事訴訟請求賠償，較一般民訴程序更具效率。</p>
+      <h3>三、辯護策略</h3>
+      <p>被告方面，常見辯護包括主觀上無不法所有意圖、所陳述內容均為真實等。每案事實不同，建議儘早委任律師，針對個案情況制定防禦策略。</p>
+    `
+  },
+  {
+    id: 6, category: 'civil',
+    tag: '民事', tagClass: 'civil',
+    date: '2025.05.10',
+    title: '科技合約常見陷阱：軟體授權與資料保護條款解析',
+    excerpt: '企業在簽署科技相關合約時，常忽略授權範圍、免責條款與個資保護等關鍵條文，本文提醒重要注意事項。',
+    author: '黃仁傑 律師',
+    body: `
+      <p>隨著企業數位化程度提升，科技合約的重要性與日俱增。軟體授權合約、SaaS服務條款、資料處理協議等文件若未仔細審閱，可能為企業帶來嚴重的法律風險。</p>
+      <h3>一、授權範圍</h3>
+      <p>軟體授權須明確界定使用範圍，包括：使用者人數、使用地域、商業用途或個人用途、是否可轉授權等。模糊的授權範圍常是日後爭議的根源。</p>
+      <h3>二、個資保護條款</h3>
+      <p>依個人資料保護法，企業委託第三方處理個人資料時，應簽署資料處理協議（DPA），明確規範受託方之義務與責任。忽略此條款可能面臨主管機關裁罰。</p>
+      <h3>三、免責與賠償上限條款</h3>
+      <p>科技合約中常見賠償責任上限條款，限制服務方賠償金額。企業主應審慎評估此類條款是否符合商業利益，必要時可要求調整或要求對方購置相應保險。</p>
+    `
+  },
+];
+
+let currentFilter = 'all';
+
+function renderArticles(filter) {
+  currentFilter = filter;
+  const grid = document.getElementById('articlesGrid');
+  const filtered = filter === 'all' ? articles : articles.filter(a => a.category === filter);
+  grid.innerHTML = filtered.map(a => `
+    <div class="article-card" onclick="openArticle(${a.id})">
+      <div class="article-meta">
+        <span class="article-tag ${a.tagClass}">${a.tag}</span>
+        <span class="article-date">${a.date}</span>
+      </div>
+      <div class="article-title">${a.title}</div>
+      <div class="article-excerpt">${a.excerpt}</div>
+      <div class="article-author">
+        <span class="author-dot"></span>
+        ${a.author}
+      </div>
+    </div>
+  `).join('');
+}
+
+function filterArticles(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderArticles(cat);
+}
+
+function openArticle(id) {
+  const a = articles.find(x => x.id === id);
+  if (!a) return;
+  document.getElementById('modalContent').innerHTML = `
+    <div class="modal-tag"><span class="article-tag ${a.tagClass}">${a.tag}</span></div>
+    <div class="modal-title">${a.title}</div>
+    <div class="modal-meta">${a.date} ｜ 撰文：${a.author}</div>
+    <div class="modal-body">${a.body}</div>
+  `;
+  document.getElementById('articleModal').classList.add('open');
+}
+
+function closeModal(e) {
+  if (e.target.id === 'articleModal') {
+    document.getElementById('articleModal').classList.remove('open');
+  }
+}
+
+function submitForm() {
+  alert('感謝您的諮詢！我們將於一至二個工作日內與您聯繫。\n\n如需緊急協助，請直接撥打：02-7755-1995');
+}
+
+// Init
+renderArticles('all');
+</script>
+</body>
+</html>
